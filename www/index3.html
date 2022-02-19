@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<style>
+    .text {
+      line-height: 24px;
+      overflow: hidden;
+    }
+    .readmore-btn {
+      text-align: right;
+      display: none;
+    }
+
+</style>
+<script src="components/jquery/dist/jquery.min.js"></script>
+<script>
+    $(function() {
+      var textHeight = $('.text').height(),
+        lineHeight = parseFloat($('.text').css('line-height')),
+        //初期状態で表示させる行数
+        lineNum = 3,
+        textNewHeight = lineHeight * lineNum;
+      if (textHeight > textNewHeight) {
+        $('.text').css('height', textNewHeight);
+        $('.readmore-btn').show();
+        $('.readmore-btn').click(function() {
+          $(this).hide();
+          $('.text').css('height', textHeight);
+          return false
+        });
+      };
+    });
+
+</script>
+</head>
+
+<body>
+    <a href="index.html">変更後</a>
+          <p class="text">"じゅげむじゅげむごこうのすりきれかいじゃりすいぎょのすいぎょうまつうんらいまつふうらいまつくうねるところにすむところやぶらこうじのぶらこうじぱいぽぱいぽぱいぽのしゅーりんがんしゅーりんがんのぐーりんだいぐーりんだいのぽんぽこぴーのぽんぽこなーのちょうきゅうめいのちょうすけじゅげむじゅげむごこうのすりきれかいじゃりすいぎょのすいぎょうまつうんらいまつふうらいまつくうねるところにすむところやぶら......."</p>
+          <p class="readmore-btn">続きを読む</p>
+</body>
+</html>
